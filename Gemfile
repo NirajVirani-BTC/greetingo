@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-ruby '1.9.3'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
@@ -41,3 +40,17 @@ gem 'jbuilder', '~> 1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'bootstrap-sass', '~> 2.3.2.2'
+gem 'haml-rails'
+gem 'pg'
+
+group :development do
+  gem 'html2haml'
+  gem 'rails_layout'
+end
+
+
+gem 'spree', '2.1.2'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
