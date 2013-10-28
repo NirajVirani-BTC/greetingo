@@ -4,4 +4,9 @@
       %a.brand{:href => '/'} Greetingo
       %ul.nav{:style => "float:right;"}
         %li= link_to Spree.t(:home), spree.root_path
-        %li= link_to "SignIn", '#'
+        - if spree_current_user
+          %li= link_to "#{Spree.t(:logout)} ( #{spree_current_user.email} )", spree_logout_path
+          %li 
+        - else
+          %li= link_to Spree.t(:login), spree_login_path
+          %li= link_to Spree.t(:signup), spree_signup_path
