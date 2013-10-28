@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Greetingo
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      = render partial: 'layouts/header'
+      .row
+        .span8
+          = render :partial => 'spree/shared/search'
+        .span2#link-to-cart
+          = link_to_cart
+      #wrapper.row{"data-hook" => ""}
+        = breadcrumbs(@taxon)
+        .row-fluid
+          .span3
+            = render :partial => 'spree/shared/sidebar' if content_for? :sidebar
+          .span9
+            #content{:class => "columns #{!content_for?(:sidebar) ? "sixteen" : "twelve"}", "data-hook" => ""}
+              = flash_messages
+              = yield
+        = yield :templates
+      = render :partial => 'layouts/footer'
