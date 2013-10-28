@@ -1,0 +1,7 @@
+.navbar.navbar-fixed-top.navbar-inverse
+  .navbar-inner
+    .container
+      %a.brand{:href => '/'} Greetingo
+      %ul.nav{:style => "float:right;"}
+        %li= link_to Spree.t(:home), spree.root_path
+        %li= link_to "SignIn", '#'
